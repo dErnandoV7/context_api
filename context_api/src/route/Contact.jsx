@@ -4,13 +4,18 @@
 
 import { useCounterContext } from "../hooks/useCounterContext"
 
+// 5. Contexto mais complexo
+import { useTitleColorContext } from '../hooks/useTitleColor'
+
 const Contact = () => {
     const { counter, setCounter } = useCounterContext()
     const newValue = counter + 1
+    
+    const { color } = useTitleColorContext()
 
     return (
         <div>
-            <h1>Contact</h1>
+            <h1 style={{ color }}>Contact</h1>
 
             <button onClick={() => setCounter(newValue)}>Mudar valor do counter</button>
             <h3>Counter (contato): {counter}</h3>
