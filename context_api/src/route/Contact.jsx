@@ -1,10 +1,13 @@
-import { CounterContext } from "../context/CounterContext"
+// 3. Alterando valor do context
 
-import { useContext } from "react"
+// 4. Refatorando com hook - Consumindo e alterados dados do contexto usando hook
+
+import { useCounterContext } from "../hooks/useCounterContext"
 
 const Contact = () => {
-    const { counter, setCounter } = useContext(CounterContext)
+    const { counter, setCounter } = useCounterContext()
     const newValue = counter + 1
+
     return (
         <div>
             <h1>Contact</h1>

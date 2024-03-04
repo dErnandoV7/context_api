@@ -1,15 +1,18 @@
+// 3. Alterando valor do context
 
-import { CounterContext } from '../context/CounterContext'
+// 4. Refatorando com hook - Consumindo e alterados dados do contexto usando hook
 
-import { useContext } from 'react'
+import { useCounterContext } from '../hooks/useCounterContext'
+
 const Home = () => {
-    const { counter, setCounter } = useContext(CounterContext)
+    const {counter, setCounter} = useCounterContext()
     const newValue = counter + 1
+
     return (
         <div>
             <h1>Home</h1>
             <button onClick={() => setCounter(newValue)}>Mudar valor do counter</button>
-            <h3>Counter (home): {counter}</h3>
+            <h3>Counter (home): {counter}</h3> 
         </div>
     )
 }
