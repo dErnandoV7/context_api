@@ -6,7 +6,7 @@ import './index.css'
 import Home from './route/Home.jsx'
 import Contact from './route/Contact.jsx'
 
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 const router = createBrowserRouter([{
   path: "/",
@@ -22,8 +22,13 @@ const router = createBrowserRouter([{
   ]
 }])
 
+// 2. Criando Provider
+import { CounterContextProvider } from './context/CounterContext.jsx'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CounterContextProvider>
+      <RouterProvider router={router} />
+    </CounterContextProvider>
   </React.StrictMode>,
 )
